@@ -1,0 +1,56 @@
+/*
+ Theme Name:   VanGypsy
+ Theme URI:    
+ Description:  VanGypsy - using Visual theme as a base
+ Author:       Vanessa Garcia
+ Author URI:   
+ Template:     visual
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         
+ Text Domain:  VanGypsy
+*/
+
+/*importing visual theme styles*/
+/*@import url(../visual/style.css);*/
+
+@import url(fonts/fonts.css);
+
+
+
+#masthead {
+  height: 310px;
+  background: url(images/header-bg.jpg) 50% 0 no-repeat;
+
+}
+#masthead hgroup {
+  margin-top: 0; 
+  float: none; 
+  padding-top: 50px;
+  min-height: 48px;
+}
+
+#masthead hgroup h1 {
+  font-family: 'hippie_gypsyregular', Arial, sans-serif;
+  font-size: 132px;
+  text-align: center;
+}
+
+#masthead hgroup h1 a{
+  color: #F1E6E2;
+}
+#masthead hgroup h1 a:hover{
+  color: #49231E;
+}
+
+
+.navigation-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #343434;
+}
+.main-navigation a {
+  padding: 15px 20px;
+}
