@@ -1,51 +1,61 @@
-<?php
-/**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="main">
- *
- * @package Visual
- * @since Visual 0.1
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
+<!DOCTYPE html>
 
-<?php wp_head(); ?>
+<!--[if IE 9 ]><html class="ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
+
+<head>
+
+    <?php wp_head(); ?>
+
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		</hgroup>
-	
-		<div class="navigation-container">
-			<div class="section clearfix">
-				<nav role="navigation" class="site-navigation main-navigation clearfix">
-					<h3 class="assistive-text menu-toggle"><a class="icon-menu" href="#menu-main"><?php _e( 'Menu', 'visual' ); ?></a></h3>
-					<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'visual' ); ?>"><?php _e( 'Skip to content', 'visual' ); ?></a></div>
-				<?php
-				if ( has_nav_menu( 'primary' ) ) {
-					wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => '2' ) );
-				} else {
-					wp_page_menu();
-				}
-				?>
-				</nav><!-- .site-navigation .main-navigation -->
-			</div>
-		</div>
-	</header><!-- #masthead .site-header -->
+<body id="<?php print get_stylesheet(); ?>" <?php body_class('ct-body'); ?>>
 
-	<div id="main" class="site-main">
-		<div class="section clearfix">
+<div id="overflow-container" class="overflow-container">
+    <a class="skip-content" href="#main"><?php _e('Skip to content', 'tracks'); ?></a>
+<header id="site-header" class="site-header" role="banner">
+
+    <?php
+
+    $social_icon_setting = get_theme_mod('social_icons_display_setting');
+
+    if( ( has_nav_menu( 'secondary' ) ) || // if secondary menu is set, or...
+        ( get_theme_mod('search_input_setting') == 'show' ) || // if search bar is on, or...
+        ( $social_icon_setting == 'header-footer' || $social_icon_setting == 'header' ) ) : // default is 'no', so if it is equal header & footer, or header display it
+
+            echo "<div class='top-navigation'>";
+
+                echo "<div class='container'>";
+
+                    // add secondary menu if set
+                    get_template_part( 'menu', 'secondary' );
+
+                    // add search input if set
+                    if(get_theme_mod('search_input_setting') == 'show'){
+                        get_search_form();
+                    }
+                    // display social icons if set
+                    if( (get_theme_mod('social_icons_display_setting') == 'header-footer') || (get_theme_mod('social_icons_display_setting') == 'header')){
+                        get_template_part('content/social-icons');
+                    }
+
+                echo "</div>";
+
+            echo "</div>";
+    endif; ?>
+    <div class="container">
+
+        <div id="title-info" class="title-info">
+            <?php get_template_part('logo')  ?>
+        </div>
+
+        <?php get_template_part( 'menu', 'primary' ); // adds the primary menu ?>
+    </div><!-- .container -->
+</header>
+
+<div id="content-container">
+    <div id="sidebar" class="sidebar">
+        <?php get_sidebar(); ?>
+    </div><!-- .sidebar -->
+
+        <div id="main" class="main" role="main">

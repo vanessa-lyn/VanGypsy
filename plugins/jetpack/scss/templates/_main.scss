@@ -185,7 +185,7 @@ body {
 		}
 	}
 	.jetpack-modules + .jetpack-modules {
-		margin-left:15px
+		margin-left: 15px;
 	}
 }
 
@@ -742,9 +742,6 @@ body {
 		border-color: #8ac9e8;
 		background: #f8fcfe;
 	}
-	&:nth-of-type(n+10) {
-		display: none;
-	}
 	h3 {
 		cursor: pointer;
 		margin: 0 0 em(7px);
@@ -761,9 +758,6 @@ body {
 	&:hover, &:focus {
 		border-color: #8ac9e8;
 		background: #f8fcfe;
-	}
-	&:nth-of-type(n+10) {
-		display: none;
 	}
 
 	&.active {
@@ -1591,7 +1585,7 @@ body {
 // Custom Breakpoints
 // ==========================================================================
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 515px) {
 	.jp-frame {
 		.header-nav {
 			padding-bottom: 10px;
@@ -1612,6 +1606,14 @@ body {
 			.jetpack-modules + .jetpack-modules {
 				text-align: left;
 			}
+			.jetpack-modules:nth-child(4) {
+				text-align: center;
+				margin: 0 auto;
+				width: 100%;
+				a {
+					padding: 0 10px;
+				}
+			}
 		}
 	}
-} // max 400px
+} // max 515px

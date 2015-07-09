@@ -22,6 +22,23 @@
     }
 
 
+    /**
+     * Register widgetized area and update sidebar with default widgets
+     */
+    function sidebar_widgets_init() {
+        register_sidebar( array(
+            'name' => __( 'Side Sidebar', 'tracks' ),
+            'id' => 'sidebar-1',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<div class="widget-title">',
+            'after_title' => '</div>',
+        ) );
+
+    }
+    add_action( 'widgets_init', 'sidebar_widgets_init' );
+
+
     // add_action( 'wp_enqueue_scripts', 'child_functions_enqueue_scripts' );
     // function child_functions_enqueue_scripts() {
     //     wp_enqueue_script( 'child_functions', get_stylesheet_directory_uri() . '/js/child-functions.js', '', '', true );
