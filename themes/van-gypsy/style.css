@@ -17,14 +17,24 @@
 
 @import url(fonts/fonts.css);
 
+.site-header .container {
+  overflow: auto;
+}
+#main, #title-info, #toggle-navigation, #site-header {
+  margin: 0;
+  width: 100%;
+}
+
 #content-container {
   clear: both;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 #sidebar {
-  width: 20%;
+  width: 25%;
   float: left;
-  padding: 0 2%;
+  padding: 0 2% 0 0;
 }
 
   /* wigets */
@@ -33,6 +43,9 @@
     color: white;
     opacity: 0.6;
     text-align: center;
+  }
+  .widget {
+    margin-bottom: 4em;
   }
 
   #sidebar ul.perfect-quotes li {
@@ -45,9 +58,9 @@
   }
 
 #main {
-  width: 80%;
-  float:right;
-  padding: 0 2%;
+  width: 75%;
+  float: right;
+  padding: 0 0 0 0;
 }
 .site-footer {
   width: 100%;
@@ -72,16 +85,16 @@
 */
 .site-title {
   font-family: 'hippie_gypsyregular', Arial, sans-serif;
-  font-size: 132px;
-  font-size: 90px;
+  font-size: 103px;
   font-weight: 100;
-  line-height: 1.4;
+  line-height: 1;
+  text-align: center;
 }
-/*
-#masthead hgroup h1 a{
+
+/*.site-title a{
   color: #F1E6E2;
 }
-#masthead hgroup h1 a:hover{
+.site-title a:hover{
   color: #49231E;
 }*/
 
