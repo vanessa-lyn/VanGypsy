@@ -109,11 +109,35 @@
   padding: 15px 20px;
 }*/
 
+.entry-container {
+  padding: 0 10%;
+}
+
+
 @media all and (min-width: 37.5em) {
    .excerpt-title, .entry-title {
     line-height: 1.2;
     font-size: 1.5em;
   }
+
+  .entry-title {
+    font-size: 1em;
+  }
+
+}
+
+@media all and (min-width: 56.25em) {
+
+  .entry-meta, .entry-header {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .entry-header h1 {
+    font-size: 2.5em;
+  }
+  
+
 
 }
 
