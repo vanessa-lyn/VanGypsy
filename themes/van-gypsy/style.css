@@ -26,6 +26,24 @@
   float: left;
   padding: 0 2%;
 }
+
+  /* wigets */
+  .widget-title {
+    font-size: 1em;
+    color: white;
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  #sidebar ul.perfect-quotes li {
+    background-color: grey;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700;
+    font-family: fantasy;
+    padding: 12px;
+  }
+
 #main {
   width: 80%;
   float:right;
@@ -51,13 +69,15 @@
   padding-top: 50px;
   min-height: 48px;
 }
-
-#masthead hgroup h1 {
+*/
+.site-title {
   font-family: 'hippie_gypsyregular', Arial, sans-serif;
   font-size: 132px;
-  text-align: center;
+  font-size: 90px;
+  font-weight: 100;
+  line-height: 1.4;
 }
-
+/*
 #masthead hgroup h1 a{
   color: #F1E6E2;
 }
@@ -75,3 +95,12 @@
 .main-navigation a {
   padding: 15px 20px;
 }*/
+
+@media all and (min-width: 37.5em) {
+   .excerpt-title, .entry-title {
+    line-height: 1.2;
+    font-size: 1.5em;
+  }
+
+}
+
